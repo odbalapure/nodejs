@@ -8,7 +8,7 @@ client.messages
   .create({
     body: "This is a test message from twilio!",
     from: process.env.TWILIO_PHONE_NO,
-    to: "+91-8956764442",
+    to: process.env.PERSONAL_PHONE_NO,
   })
   .then((msg) => console.log("The message: ", msg))
   .catch((err) => console.log("The error: ", err));
@@ -26,8 +26,8 @@ client.messages
 
 // client.messages
 //   .create({
-//     from: "whatsapp:+14155238886",
-//     to: "whatsapp:91-8956764442",
+//     from: `whatsapp:${process.env.TWILIO_PHONE_NO}`,
+//     to: `whatsapp:${process.env.PERSONAL_PHONE_NO}`,
 //     body: `Hi ${name.split(" ")[0]}!\nYour appointment has been confirmed for ${date}.`,
 //   })
 //   .then((msg) => console.log("The message: ", msg))
